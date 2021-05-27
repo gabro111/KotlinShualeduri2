@@ -12,11 +12,17 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shualedurikotlinn2.R
 import com.example.shualedurikotlinn2.SecondActivity
+import com.example.shualedurikotlinn2.api.CommentApi
 import com.example.shualedurikotlinn2.room.Post
 import kotlin.coroutines.coroutineContext
 
-class RecycleViewAdapter(private val list:List<Post>): RecyclerView.Adapter<RecycleViewAdapter.RecycleViewHolder>() {
+class RecycleViewAdapter(private var list:List<Post>): RecyclerView.Adapter<RecycleViewAdapter.RecycleViewHolder>() {
 
+
+    fun setUpdatedData(list:List<Post>){
+        this.list = list
+        notifyDataSetChanged()
+    }
     class RecycleViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         private val title = itemView.findViewById<TextView>(R.id.titlePost)
         private val body = itemView.findViewById<TextView>(R.id.bodyPost)

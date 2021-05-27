@@ -7,10 +7,11 @@
 
     <TextView
         android:id="@+id/secondTitle"
-        android:textSize="26sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,12 +29,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/secondTitle" />
 
+    <TextView
+        android:id="@+id/nones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comment Count:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondBody" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/nones"
+        app:layout_constraintTop_toBottomOf="@+id/secondBody" />
+
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="0dp"
+
+
         android:layout_height="0dp"
-
-
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="22dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +62,7 @@
             android:id="@+id/commentRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/commentrecyclerview_item"/>
+            tools:listitem="@layout/commentrecyclerview_item" />
 
     </androidx.core.widget.NestedScrollView>
 

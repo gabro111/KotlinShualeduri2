@@ -6,6 +6,9 @@ import com.example.shualedurikotlinn2.api.RetrofitClient
 
 class App:Application() {
 
+
+
+
     lateinit var db:AppDatabase
     companion object{
         lateinit var instance:App

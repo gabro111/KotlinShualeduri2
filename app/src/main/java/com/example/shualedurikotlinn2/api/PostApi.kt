@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class PostApi(
     @SerializedName("id")
-    val postId:Long?,
+    val postId:Long,
     @SerializedName("userId")
     var userId:Long?,
     @SerializedName("title")

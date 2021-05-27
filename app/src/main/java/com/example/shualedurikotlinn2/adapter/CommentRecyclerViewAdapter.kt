@@ -8,7 +8,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.shualedurikotlinn2.R
 import com.example.shualedurikotlinn2.api.CommentApi
 
-class CommentRecyclerViewAdapter(private val list:List<CommentApi>?):RecyclerView.Adapter<CommentRecyclerViewAdapter.CommentRecyclerViewHolder> (){
+class CommentRecyclerViewAdapter(private var list:List<CommentApi>?):RecyclerView.Adapter<CommentRecyclerViewAdapter.CommentRecyclerViewHolder> (){
+
+    fun setUpdatedData(list:List<CommentApi>?){
+        this.list = list
+        notifyDataSetChanged()
+    }
 
     class CommentRecyclerViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
 
@@ -28,10 +33,8 @@ class CommentRecyclerViewAdapter(private val list:List<CommentApi>?):RecyclerVie
     }
 
     override fun onBindViewHolder(holder: CommentRecyclerViewHolder, position: Int) {
+            holder.bindComment(list!!.elementAt(position))
 
-        if (list != null) {
-            holder.bindComment(list.elementAt(position))
-        }
     }
 
     override fun getItemCount() = list!!.size
