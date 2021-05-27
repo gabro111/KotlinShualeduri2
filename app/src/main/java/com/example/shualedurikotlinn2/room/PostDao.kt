@@ -10,6 +10,9 @@ interface PostDao {
     @Query("SELECT * FROM POSTS")
     fun getAllPosts():List<Post>
 
+    @Query("Select * From POSTS WHERE POST_ID = :postId")
+    fun getPost(postId:Long?):Post
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(vararg post: Post)
 

@@ -14,5 +14,5 @@ interface ReqResService {
     fun getPost(@Path("postId") postId: Long):Call<PostApi>
 
     @GET("posts/{postId}/comments")
-    fun getPostComment(@Query("postId") postId:Long)
+    fun getPostComment(@Path("postId") postId:Long?):Call<List<CommentApi>>
 }
