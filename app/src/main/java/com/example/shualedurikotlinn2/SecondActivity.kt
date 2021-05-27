@@ -71,9 +71,11 @@ private fun getComments(postId:Long?){
                 call: Call<List<CommentApi>>,
                 response: Response<List<CommentApi>>
             ) {
-                comments = response.body() as MutableList<CommentApi>
-                commentRecyclerViewAdapter.setUpdatedData(comments)
-                textView.text = commentRecyclerViewAdapter.itemCount.toString()
+                if(response.isSuccessful) {
+                    comments = response.body() as MutableList<CommentApi>
+                    commentRecyclerViewAdapter.setUpdatedData(comments)
+                    textView.text = commentRecyclerViewAdapter.itemCount.toString()
+                }
             }
 
             override fun onFailure(call: Call<List<CommentApi>>, t: Throwable) {
