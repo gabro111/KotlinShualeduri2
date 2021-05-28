@@ -48,12 +48,14 @@ class MainActivity : AppCompatActivity() {
         posts = App.instance.db.getPostDao().getAllPosts()
 
 
-        textView.text = posts.size.toString()
+
 
         recyclerViewAdapter = RecycleViewAdapter(posts)
         mainRecyclerView.layoutManager = LinearLayoutManager(this)
         mainRecyclerView.adapter = recyclerViewAdapter
 
+
+        textView.text = recyclerViewAdapter.itemCount.toString()
         swipeRefresh.setOnRefreshListener {
             App.instance.db.getPostDao().deleteAllPosts()
 
